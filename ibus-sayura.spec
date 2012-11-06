@@ -1,7 +1,7 @@
 Summary:	The Sinhala engine for IBus input platform
 Name:		ibus-sayura
 Version:	1.3.1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Libraries
 Source0:	https://fedorahosted.org/releases/i/b/ibus-sayura/%{name}-%{version}.tar.gz
