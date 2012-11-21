@@ -1,4 +1,5 @@
 Summary:	The Sinhala engine for IBus input platform
+Summary(pl.UTF-8):	Silnik metody Sinhala dla platformy wprowadzania IBus
 Name:		ibus-sayura
 Version:	1.3.1
 Release:	2
@@ -7,15 +8,20 @@ Group:		Libraries
 Source0:	https://fedorahosted.org/releases/i/b/ibus-sayura/%{name}-%{version}.tar.gz
 # Source0-md5:	97074cccdaad1332d470aee92fac645e
 URL:		https://fedorahosted.org/ibus-sayura
-BuildRequires:	ibus-devel
+BuildRequires:	gettext-devel >= 0.16.1
+BuildRequires:	ibus-devel >= 1.2.99
 BuildRequires:	pkgconfig
-Requires:	ibus
+Requires:	ibus >= 1.2.99
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}/ibus
 
 %description
 The Sayura engine for IBus platform. It provides Sinhala input method.
+
+%description -l pl.UTF-8
+Silnik Sayura dla platformy IBus. Udostępnia metodę wprowadzania
+Sinhala.
 
 %prep
 %setup -q
@@ -31,12 +37,16 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# only single empty translation exists
+#find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
+# -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS README
+%doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_libexecdir}/ibus-engine-sayura
 %{_datadir}/ibus-sayura
 %{_datadir}/ibus/component/sayura.xml
