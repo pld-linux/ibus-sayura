@@ -5,9 +5,9 @@ Version:	1.3.2
 Release:	1
 License:	GPL v2+
 Group:		Libraries
-Source0:	https://fedorahosted.org/releases/i/b/ibus-sayura/%{name}-%{version}.tar.gz
+Source0:	https://releases.pagure.org/ibus-sayura/%{name}-%{version}.tar.gz
 # Source0-md5:	a35b3da5f973164d85d3498d29ad3650
-URL:		https://fedorahosted.org/ibus-sayura
+URL:		https://pagure.io/ibus-sayura
 BuildRequires:	gettext-tools >= 0.16.1
 BuildRequires:	ibus-devel >= 1.2.99
 BuildRequires:	pkgconfig
